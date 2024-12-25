@@ -1,4 +1,5 @@
 using Domain.Forum.Enums;
+using Domain.UserManagement.Entities;
 
 namespace Domain.Forum.Entities
 {   
@@ -9,7 +10,7 @@ namespace Domain.Forum.Entities
         public TargetType TargetType { get; private set; }
         public ReactionType Type { get; private set; } 
 
-        // relacoes
+        // relationships
         public Guid UserId { get; private set; }
         public User User { get; private set; }
 

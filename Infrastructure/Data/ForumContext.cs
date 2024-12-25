@@ -1,4 +1,5 @@
 using Domain.Forum.Entities;
+using Domain.UserManagement.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Context

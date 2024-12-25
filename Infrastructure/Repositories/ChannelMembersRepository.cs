@@ -1,5 +1,5 @@
 using Domain.Forum.Entities;
-using Domain.Forum.Repositories;
+using Domain.Forum.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories

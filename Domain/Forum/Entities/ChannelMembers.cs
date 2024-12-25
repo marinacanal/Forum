@@ -1,10 +1,12 @@
+using Domain.UserManagement.Entities;
+
 namespace Domain.Forum.Entities
 {
     public class ChannelMembers
     {   
         public Guid ChannelMembersId { get; private set; }
 
-        // relacoes
+        // relationships
         public Guid UserId { get; private set; }
         public User User { get; private set; }
         public Guid ChannelId { get; private set; }

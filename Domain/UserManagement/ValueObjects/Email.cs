@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Domain.Forum.ValueObjects {
+namespace Domain.UserManagement.ValueObjects {
     public class Email {
         public string Value { get; private set; }
 

@@ -1,4 +1,5 @@
 using Domain.Forum.ValueObjects;
+using Domain.UserManagement.Entities;
 
 namespace Domain.Forum.Entities
 {
@@ -9,7 +10,7 @@ namespace Domain.Forum.Entities
         public PostContent Content { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
-        // relacoes
+        // relationships
         public Guid UserId { get; private set; }
         public User User { get; private set; }
         public Guid ChannelId { get; private set; }

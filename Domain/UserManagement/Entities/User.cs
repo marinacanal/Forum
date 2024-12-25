@@ -1,21 +1,20 @@
-using Domain.Forum.ValueObjects;
+using Domain.Forum.Entities;
+using Domain.UserManagement.ValueObjects;
 
-namespace Domain.Forum.Entities
+namespace Domain.UserManagement.Entities
 {
     public class User
     {
         public Guid UserId { get; private set; }
-
-        // objetos de valor
+        public DateTime CreatedAt { get; private set; }
+        public string ProfilePictureUrl { get; private set; }
+       
+        // value objects
         public Username UserName { get; private set; }
         public Email Email { get; private set; }
-        public Password Password { get; private set; }
+        public Password Password { get; private set; }        
 
-        // atributos da entidade
-        public string ProfilePictureUrl { get; private set; }
-        public DateTime CreatedAt { get; private set; }
-
-        // relacoes
+        // relationships
         public IReadOnlyCollection<Channel> ChannelsCreated { get; private set; } 
         public IReadOnlyCollection<ChannelMembers> JoinedChannels { get; private set; } 
         public IReadOnlyCollection<Post> Posts { get; private set; } 

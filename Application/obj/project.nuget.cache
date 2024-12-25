@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HGi4fhkawxRLGJtfsWx2COaKRwCZooyLVnygCt2ZqYI7p5gJ70cIKOLvk0zHDXUfFS7Dyg5AUKKmrrA+Ch/g3g==",
+  "dgSpecHash": "RfWmj5OedbHFycxitfWzDEaK3gxa/PMMbWZHhX4ZgAKcO1LmUGwbC0KZEj715B1lrACpJni42D0whX3ZsnyU2Q==",
   "success": true,
   "projectFilePath": "/home/kamore/Documents/C#/Forum/Application/Application.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,7 @@
     "/home/kamore/.nuget/packages/npgsql/8.0.5/npgsql.8.0.5.nupkg.sha512",
     "/home/kamore/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.10/npgsql.entityframeworkcore.postgresql.8.0.10.nupkg.sha512",
     "/home/kamore/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
-    "/home/kamore/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.10/microsoft.aspnetcore.app.ref.8.0.10.nupkg.sha512"
+    "/home/kamore/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
   ],
   "logs": []
 }

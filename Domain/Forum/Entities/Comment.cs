@@ -1,4 +1,5 @@
 using Domain.Forum.ValueObjects;
+using Domain.UserManagement.Entities;
 
 namespace Domain.Forum.Entities
 {
@@ -8,7 +9,7 @@ namespace Domain.Forum.Entities
         public CommentContent Content { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
-        // relacoes
+        // relationships
         public Guid PostId { get; private set; }
         public Post Post { get; private set; } 
         public Guid UserId { get; private set; }  
