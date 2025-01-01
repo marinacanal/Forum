@@ -15,8 +15,15 @@ namespace Infrastructure.Repositories
             _dbSet = _context.Set<Comment>();
         }
 
+        // get by
+        public async Task<Comment> GetByIdAsync(Guid commentId) 
+        {
+            return await _dbSet.FindAsync(commentId);
+        }
+
         // get all
-        public async Task<List<Comment>> GetAllByPostIdAsync(Guid postId) {
+        public async Task<List<Comment>> GetAllByPostIdAsync(Guid postId) 
+        {
             return await _dbSet
                 .Where(comment => comment.PostId == postId)
                 .ToListAsync();

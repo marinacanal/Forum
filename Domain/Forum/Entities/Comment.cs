@@ -29,7 +29,7 @@ namespace Domain.Forum.Entities
 
         public void UpdateContent(CommentContent content) => Content = content;
         
-        public void AddLike(Reaction reaction) 
+        public void AddReaction(Reaction reaction) 
         {
             if (reaction == null) throw new ArgumentNullException(nameof(reaction));
             

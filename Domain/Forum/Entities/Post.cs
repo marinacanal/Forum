@@ -19,11 +19,12 @@ namespace Domain.Forum.Entities
         public ICollection<Comment> Comments { get; private set; }
 
         // constructor
-        public Post(PostTitle title, PostContent content, Guid userid) 
-        {
+        public Post(PostTitle title, PostContent content, Guid userId, Guid channelId) 
+        {   
             PostId = Guid.NewGuid();
             CreatedAt = DateTime.UtcNow;
-            UserId = userid;
+            UserId = userId;
+            ChannelId = channelId;
             Title = title; 
             Content = content;
 

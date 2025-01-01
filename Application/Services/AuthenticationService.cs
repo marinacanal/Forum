@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Domain.UserManagement.Entities;
 using Domain.UserManagement.ValueObjects;
 using Infrastructure.Repositories;
@@ -27,7 +26,7 @@ namespace Application.Services
             return true;
         }
 
-        public async Task<bool> RegisterAsync(string username, string useremail, string plainTextPassword)
+        public async Task<User> RegisterAsync(string username, string useremail, string plainTextPassword)
         {
             var user = await _userRepository.GetByUserNameAsync(username);
 
@@ -40,11 +39,8 @@ namespace Application.Services
                 new Password(plainTextPassword, _passwordHasher)
             );
             
-            if (newUser == null)
-                return false;
-            
             await _userRepository.CreateAsync(newUser);
-            return true;
+            return newUser;
         }
     }
 }
