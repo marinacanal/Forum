@@ -1,6 +1,6 @@
 using Domain.Forum.Entities;
 using Domain.Forum.ValueObjects;
-using Infrastructure.Repositories;
+using Infrastructure.Persistence.Repositories;
 
 namespace Application.Services
 {

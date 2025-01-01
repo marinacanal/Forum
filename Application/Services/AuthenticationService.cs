@@ -1,6 +1,6 @@
 using Domain.UserManagement.Entities;
 using Domain.UserManagement.ValueObjects;
-using Infrastructure.Repositories;
+using Infrastructure.Persistence.Repositories;
 using Infrastructure.Security;
 
 namespace Application.Services

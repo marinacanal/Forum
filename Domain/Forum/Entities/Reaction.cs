@@ -17,17 +17,20 @@ namespace Domain.Forum.Entities
         // constructor
         public Reaction(Guid userId, Guid targetId, TargetType targetType, ReactionType reactionType)
         {
-            ReactionId = Guid.NewGuid();
-            UserId = userId;
-            TargetId = targetId;
-            TargetType = targetType;
-            Type = reactionType;
+            if (userId == Guid.Empty) 
+                throw new ArgumentNullException("Usuário não pode ser vazio!", nameof(userId));
 
             if (targetType == TargetType.Post && targetId == Guid.Empty)
                 throw new ArgumentException("Post não pode ser vazio!", nameof(targetId));
 
             if (targetType == TargetType.Comment && targetId == Guid.Empty)
                 throw new ArgumentException("Comentário não pode ser vazio!", nameof(targetId));
+
+            ReactionId = Guid.NewGuid();
+            UserId = userId;
+            TargetId = targetId;
+            TargetType = targetType;
+            Type = reactionType;
         }
 
         // verifica se o usuário curtiu ou descurtiu

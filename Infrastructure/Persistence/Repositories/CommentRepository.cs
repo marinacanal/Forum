@@ -3,7 +3,7 @@ using Domain.Forum.Interfaces;
 using Domain.Forum.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories
+namespace Infrastructure.Persistence.Repositories
 {
     public class CommentRepository : ICommentRepository
     {

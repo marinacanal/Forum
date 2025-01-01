@@ -19,6 +19,9 @@ namespace Domain.Forum.Entities
         // constructor
         public Channel(Guid creatorId, ChannelName name) 
         {
+            if (creatorId == Guid.Empty) 
+                throw new ArgumentNullException("Usuário não pode ser vazio!", nameof(creatorId));
+ 
             ChannelId = Guid.NewGuid();
             CreatorId = creatorId;
             CreatedAt = DateTime.UtcNow;

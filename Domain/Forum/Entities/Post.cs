@@ -20,7 +20,13 @@ namespace Domain.Forum.Entities
 
         // constructor
         public Post(PostTitle title, PostContent content, Guid userId, Guid channelId) 
-        {   
+        {
+            if (userId == Guid.Empty) 
+                throw new ArgumentNullException("Usuário não pode ser vazio!", nameof(userId));
+                
+            if (channelId == Guid.Empty) 
+                throw new ArgumentNullException("Canal não pode ser vazio!", nameof(channelId));
+
             PostId = Guid.NewGuid();
             CreatedAt = DateTime.UtcNow;
             UserId = userId;
@@ -40,14 +46,14 @@ namespace Domain.Forum.Entities
 
         public void AddComment(Comment comment) 
         {
-            if (comment == null) throw new ArgumentNullException(nameof(comment));
+            if (comment == null) throw new ArgumentNullException("Comentário não pode ser vazio!", nameof(comment));
 
             Comments.Add(comment);
         }
 
-        public void AddLike(Reaction reaction) 
+        public void AddReaction(Reaction reaction) 
         {
-            if (reaction == null) throw new ArgumentNullException(nameof(reaction));
+            if (reaction == null) throw new ArgumentNullException("Reação não pode ser vazia!", nameof(reaction));
             
             Reactions.Add(reaction);
         }

@@ -2,7 +2,7 @@ using Domain.Forum.Entities;
 using Domain.Forum.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories
+namespace Infrastructure.Persistence.Repositories
 {
     public class ChannelMembersRepository : IChannelMembersRepository
     {

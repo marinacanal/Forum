@@ -2,7 +2,7 @@ using Domain.UserManagement.Entities;
 using Domain.UserManagement.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories
+namespace Infrastructure.Persistence.Repositories
 {
     // aqui eu herdo todos os metodos estabelecidos na minha classe Repository
     public class UserRepository : IUserRepository

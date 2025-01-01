@@ -17,7 +17,14 @@ namespace Domain.Forum.Entities
         public ICollection<Reaction> Reactions { get; private set; }
 
         // constructor
-        public Comment(Guid userId, Guid postId, CommentContent content) {
+        public Comment(Guid userId, Guid postId, CommentContent content) 
+        {
+            if (userId == Guid.Empty) 
+                throw new ArgumentNullException("Usuário não pode ser vazio!", nameof(userId));
+
+            if (postId == Guid.Empty) 
+                throw new ArgumentNullException("Post não pode ser vazio!", nameof(postId));            
+            
             CommentId = Guid.NewGuid();
             UserId = userId;
             PostId = postId;
@@ -31,7 +38,8 @@ namespace Domain.Forum.Entities
         
         public void AddReaction(Reaction reaction) 
         {
-            if (reaction == null) throw new ArgumentNullException(nameof(reaction));
+            if (reaction == null) 
+                throw new ArgumentNullException("Reação não pode ser vazia!", nameof(reaction));
             
             Reactions.Add(reaction);
         }
