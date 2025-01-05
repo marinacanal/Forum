@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "aEOAeLky2ApkJMIZFa17zAVtJi1GTFciU6j6Q3aiXZbcSJvHMgSDCDDNFAI+PIOcjXSRM9Mcmns1Vi739640+Q==",
+  "dgSpecHash": "F1IItBiK7ZPcj0eKoxw2ZYZjuj0cfo49mouPhEn0R6rnIkj3WrcLugDK9h06WocQR0tuMMsgsUg5zrq2/aprIw==",
   "success": true,
   "projectFilePath": "/home/kamore/Documents/C#/Forum/Web/Web.csproj",
   "expectedPackageFiles": [
-    "/home/kamore/.nuget/packages/konscious.security.cryptography.argon2/1.3.1/konscious.security.cryptography.argon2.1.3.1.nupkg.sha512",
-    "/home/kamore/.nuget/packages/konscious.security.cryptography.blake2/1.1.1/konscious.security.cryptography.blake2.1.1.1.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.aspnetcore.openapi/8.0.8/microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.entityframeworkcore/8.0.10/microsoft.entityframeworkcore.8.0.10.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.10/microsoft.entityframeworkcore.abstractions.8.0.10.nupkg.sha512",
@@ -28,7 +26,6 @@
     "/home/kamore/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/home/kamore/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "/home/kamore/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
-    "/home/kamore/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
   ],
   "logs": []

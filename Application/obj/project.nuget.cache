@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "RfWmj5OedbHFycxitfWzDEaK3gxa/PMMbWZHhX4ZgAKcO1LmUGwbC0KZEj715B1lrACpJni42D0whX3ZsnyU2Q==",
+  "dgSpecHash": "Vbxei8r2hwyQ5kuJDZnwQWXl4MC+NxJqa9T1mQaRgtpp3HIhHVd4z94SxhfgQEHOrfOPvRLchkKuhaLeACPRsA==",
   "success": true,
   "projectFilePath": "/home/kamore/Documents/C#/Forum/Application/Application.csproj",
   "expectedPackageFiles": [
-    "/home/kamore/.nuget/packages/konscious.security.cryptography.argon2/1.3.1/konscious.security.cryptography.argon2.1.3.1.nupkg.sha512",
-    "/home/kamore/.nuget/packages/konscious.security.cryptography.blake2/1.1.1/konscious.security.cryptography.blake2.1.1.1.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.entityframeworkcore/8.0.10/microsoft.entityframeworkcore.8.0.10.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.10/microsoft.entityframeworkcore.abstractions.8.0.10.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.10/microsoft.entityframeworkcore.analyzers.8.0.10.nupkg.sha512",
@@ -21,7 +19,6 @@
     "/home/kamore/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/home/kamore/.nuget/packages/npgsql/8.0.5/npgsql.8.0.5.nupkg.sha512",
     "/home/kamore/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.10/npgsql.entityframeworkcore.postgresql.8.0.10.nupkg.sha512",
-    "/home/kamore/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/home/kamore/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
   ],
   "logs": []
