@@ -8,6 +8,7 @@ namespace Domain.UserManagement.Interfaces
         Task<User> GetByIdAsync(Guid id); // tarefa assincrona, nao bloqueia threads
         Task<User> GetByEmailAsync(string useremail);
         Task<User> GetByUserNameAsync(string username);
+        Task<User> GetByEmailOrUsernameAsync(string emailOrUsername);
 
         // get contains
         Task <List<User>> GetContainsUserNameAsync(string username);

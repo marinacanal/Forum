@@ -3,7 +3,7 @@ using System.Text;
 using Domain.UserManagement.Interfaces;
 using Konscious.Security.Cryptography;
 
-namespace Infrastructure.Security
+namespace Infrastructure.Services
 {
     public class PasswordHasher : IPasswordHasher
     {

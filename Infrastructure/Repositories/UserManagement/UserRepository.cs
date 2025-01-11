@@ -29,6 +29,10 @@ namespace Infrastructure.Persistence.Repositories
             return await _dbSet.FirstOrDefaultAsync(user => user.UserName.Value == username);
         }
 
+        public async Task<User> GetByEmailOrUsernameAsync(string emailOrUsername) {
+            return await _dbSet.FirstOrDefaultAsync(user => user.Email.Value == emailOrUsername || user.UserName.Value == emailOrUsername);
+        }
+
         // get contains
         public async Task<List<User>> GetContainsUserNameAsync(string username) {
             return await _dbSet

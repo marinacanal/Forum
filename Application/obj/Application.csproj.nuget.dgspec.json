@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/kamore/Documents/C#/Forum/Application/Application.csproj": {}
+    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj": {}
   },
   "projects": {
-    "/home/kamore/Documents/C#/Forum/Application/Application.csproj": {
+    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore/Documents/C#/Forum/Application/Application.csproj",
+        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "/home/kamore/Documents/C#/Forum/Application/Application.csproj",
-        "packagesPath": "/home/kamore/.nuget/packages/",
-        "outputPath": "/home/kamore/Documents/C#/Forum/Application/obj/",
+        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj",
+        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
+        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore/.nuget/NuGet/NuGet.Config"
+          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj": {
-                "projectPath": "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj"
+              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {
+                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj"
               },
-              "/home/kamore/Documents/C#/Forum/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/home/kamore/Documents/C#/Forum/Infrastructure/Infrastructure.csproj"
+              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -70,17 +70,17 @@
         }
       }
     },
-    "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj": {
+    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj",
+        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj",
-        "packagesPath": "/home/kamore/.nuget/packages/",
-        "outputPath": "/home/kamore/Documents/C#/Forum/Domain/obj/",
+        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj",
+        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
+        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore/.nuget/NuGet/NuGet.Config"
+          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -129,17 +129,17 @@
         }
       }
     },
-    "/home/kamore/Documents/C#/Forum/Infrastructure/Infrastructure.csproj": {
+    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore/Documents/C#/Forum/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/home/kamore/Documents/C#/Forum/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/home/kamore/.nuget/packages/",
-        "outputPath": "/home/kamore/Documents/C#/Forum/Infrastructure/obj/",
+        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
+        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore/.nuget/NuGet/NuGet.Config"
+          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -151,8 +151,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj": {
-                "projectPath": "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj"
+              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {
+                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj"
               }
             }
           }
@@ -167,6 +167,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Konscious.Security.Cryptography.Argon2": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -176,6 +180,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             }
           },
           "imports": [

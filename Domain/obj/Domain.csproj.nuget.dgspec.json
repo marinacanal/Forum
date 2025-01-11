@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj": {}
+    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {}
   },
   "projects": {
-    "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj": {
+    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj",
+        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/kamore/Documents/C#/Forum/Domain/Domain.csproj",
-        "packagesPath": "/home/kamore/.nuget/packages/",
-        "outputPath": "/home/kamore/Documents/C#/Forum/Domain/obj/",
+        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj",
+        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
+        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore/.nuget/NuGet/NuGet.Config"
+          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
