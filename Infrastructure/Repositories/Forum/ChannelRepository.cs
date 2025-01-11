@@ -21,14 +21,19 @@ namespace Infrastructure.Repositories.Forum
             return await _dbSet.FindAsync(id);
         }
 
+        public async Task<Channel> GetByNameAsync(string name)
+        {
+            return await _dbSet.FirstOrDefaultAsync(channel => channel.Name.Value == name);
+        }
+
         // get contains
-        public async Task<List<Channel>> GetContainsDescriptioneAsync(ChannelDescription description)
+        public async Task<List<Channel>> GetContainsDescriptionAsync(string description)
         {
             return await _dbSet
                 .Where(channel => channel.Description.Value.Contains(description.ToString()))
                 .ToListAsync();
         }
-        public async Task<List<Channel>> GetContainsNameAsync(ChannelName name)
+        public async Task<List<Channel>> GetContainsNameAsync(string name)
         {
             return await _dbSet
                 .Where(channel => channel.Name.Value.Contains(name.ToString()))

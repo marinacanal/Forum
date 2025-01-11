@@ -8,7 +8,8 @@ namespace Domain.Forum.Entities
         public Guid ChannelId { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public ChannelName Name { get; private set; }
-        public ChannelDescription Description { get; private set; }       
+        public ChannelDescription Description { get; private set; }  
+        public string ProfilePicture { get; private set; }     
 
         // relationships
         public Guid CreatorId { get; private set; }
@@ -17,7 +18,7 @@ namespace Domain.Forum.Entities
         public ICollection<Post> Posts { get; private set; }
 
         // constructor
-        public Channel(Guid creatorId, ChannelName name) 
+        public Channel(Guid creatorId, ChannelName name, ChannelDescription description) 
         {
             if (creatorId == Guid.Empty) 
                 throw new ArgumentNullException("Usuário não pode ser vazio!", nameof(creatorId));
@@ -26,6 +27,7 @@ namespace Domain.Forum.Entities
             CreatorId = creatorId;
             CreatedAt = DateTime.UtcNow;
             Name = name;
+            Description = description;
 
             Members = new List<ChannelMembers>();
             Posts = new List<Post>();

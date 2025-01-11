@@ -6,8 +6,10 @@ namespace Domain.UserManagement.Entities
     public class User
     {
         public Guid UserId { get; private set; }
-        public DateTime CreatedAt { get; private set; }
-        public string ProfilePictureUrl { get; private set; }
+        public DateTime CreatedAt { get; private set; } 
+        public string Name { get; private set; }
+        public string Bio { get; private set; }
+        public string ProfilePicture { get; private set; }
        
         // value objects
         public Username UserName { get; private set; }

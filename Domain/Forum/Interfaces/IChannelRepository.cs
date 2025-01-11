@@ -7,13 +7,14 @@ namespace Domain.Forum.Interfaces
     {
         // get by
         Task <Channel> GetByIdAsync(Guid id);
+        Task <Channel> GetByNameAsync(string name);
 
         // get all by
         Task <List<Channel>> GetAllByCreatorIdAsync(Guid creatorId);
 
         // get contains
-        Task <List<Channel>> GetContainsNameAsync(ChannelName name);
-        Task <List<Channel>> GetContainsDescriptioneAsync(ChannelDescription description);
+        Task <List<Channel>> GetContainsNameAsync(string name);
+        Task <List<Channel>> GetContainsDescriptionAsync(string description);
 
         // create
         Task CreateAsync(Channel channel);

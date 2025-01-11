@@ -8,25 +8,15 @@ using Microsoft.Extensions.Logging;
 
 namespace Web.Forum.Controllers
 {
-    [Route("[controller]")]
-    public class CommentController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CommentController : ControllerBase
     {
         private readonly ILogger<CommentController> _logger;
 
         public CommentController(ILogger<CommentController> logger)
         {
             _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
         }
     }
 }
