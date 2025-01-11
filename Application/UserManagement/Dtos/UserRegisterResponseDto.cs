@@ -1,4 +1,4 @@
-namespace Application.Common.DTOs.UserManagement
+namespace Application.UserManagement.Dtos
 {
     public class UserRegisterResponseDto
     {

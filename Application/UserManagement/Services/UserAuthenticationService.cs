@@ -1,4 +1,4 @@
-using Application.Common.DTOs.UserManagement;
+using Application.UserManagement.Dtos;
 using Domain.UserManagement.Entities;
 using Domain.UserManagement.ValueObjects;
 using Infrastructure.Persistence.Repositories;
