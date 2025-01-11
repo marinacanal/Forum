@@ -7,7 +7,7 @@ Este é um projeto básico de fórum desenvolvido em C#, utilizando alguns conce
 O projeto está organizado nas seguintes camadas:
 
 - **Domain**: Contém as entidades, objetos de valor, interfaces de repositório e lógica de negócio.
-- **Infrastructure**: Implementa os repositórios e contexto de dados, conectando a camada de domínio ao banco de dados. Além disso, implementa serviços auxiliares como PasswordHasher, atualmente.
+- **Infrastructure**: (Em desenvolvimento) Implementa os repositórios e contexto de dados, conectando a camada de domínio ao banco de dados. Além disso, implementa serviços auxiliares como PasswordHasher e estou trabalhando para implementar gerenciamento de Token JWT.
 - **Application**: (Em desenvolvimento) Gerencia os casos de uso e a lógica de aplicação, orquestrando as operações entre as camadas de domínio e infraestrutura.
 - **Web**: (Em desenvolvimento) Fornece a interface do usuário e expõe os endpoints da API para interação com o sistema.
 
