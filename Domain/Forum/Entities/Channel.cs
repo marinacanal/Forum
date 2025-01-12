@@ -34,7 +34,13 @@ namespace Domain.Forum.Entities
         } 
 
         // updates
-        public void UpdateName(ChannelName name) => Name = name;
         public void UpdateDescription(ChannelDescription description) => Description = description;
+        public void UpdateProfilePicture(string profilePicture)
+        {
+            if (profilePicture == string.Empty) 
+                throw new ArgumentNullException("Foto não pode ser vazia!", nameof(profilePicture));
+
+            ProfilePicture = profilePicture;
+        }
     }
 }

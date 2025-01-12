@@ -8,8 +8,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Web.Controllers
 {
-    [Route("[controller]")]
-    public class UserController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
 

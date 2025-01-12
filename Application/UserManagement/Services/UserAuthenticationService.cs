@@ -1,3 +1,4 @@
+using Application.Shared;
 using Application.UserManagement.Dtos;
 using Domain.UserManagement.Entities;
 using Domain.UserManagement.ValueObjects;
@@ -18,35 +19,29 @@ namespace Application.Services.UserManagement
             _passwordHasher = passwordHasher;
         }
 
-        public async Task<UserLoginResponseDto> LoginAsync(UserLoginRequestDto dto) 
+        public async Task<ApiResponse<UserLoginResponseDto>> LoginAsync(UserLoginRequestDto dto) 
         {
             var existingUser = await _userRepository.GetByUserNameAsync(dto.UsernameOrEmail); // usa await porque deve esperar retorno do repositorio, que é async
             
             if (existingUser == null || !existingUser.Password.VerifyPassword(dto.PlainPassword, _passwordHasher))
-               return new UserLoginResponseDto
-                {
-                    IsSuccessful = false,
-                    ErrorMessage = "Usuário ou senha inválido!"
-                };
+               return ApiResponse<UserLoginResponseDto>.FailureResponse("Usuário ou senha inválidos!");
             
-            var token = _jwtTokenGenerator.GenerateToken(existingUser.UserId);
+            var token = "token teste"; // _jwtTokenGenerator.GenerateToken(existingUser.UserId);
 
-            return new UserLoginResponseDto
+            var loginResponse = new UserLoginResponseDto
                 {
-                    IsSuccessful = true,
                     Token = token
                 };
+
+            return ApiResponse<UserLoginResponseDto>.SuccessResponse(loginResponse);
         }
 
-        public async Task<UserRegisterResponseDto> RegisterAsync(UserRegisterRequestDto dto)
+        public async Task<ApiResponse<UserRegisterResponseDto>> RegisterAsync(UserRegisterRequestDto dto)
         {
             var existingUser = await _userRepository.GetByEmailAsync(dto.Email);
 
             if (existingUser != null)
-                return new UserRegisterResponseDto {
-                    IsSuccessful = false,
-                    ErrorMessage = "Conta já existente!"
-                };
+                return ApiResponse<UserRegisterResponseDto>.FailureResponse("Conta já existente!");
 
             var username = GenerateUsernameFromEmail(dto.Email);
 
@@ -58,10 +53,12 @@ namespace Application.Services.UserManagement
             
             await _userRepository.CreateAsync(newUser);
 
-            return new UserRegisterResponseDto {
-                IsSuccessful = true,
-                UserId = newUser.UserId.ToString()
-            };
+            var registerResponse = new UserRegisterResponseDto 
+                {
+                    UserId = newUser.UserId.ToString()
+                };
+            
+            return ApiResponse<UserRegisterResponseDto>.SuccessResponse(registerResponse);
         }
 
         private string GenerateUsernameFromEmail(string email) 
