@@ -40,6 +40,14 @@ namespace Infrastructure.Repositories.Forum
                 .ToListAsync();
         }
 
+        // get all
+        public async Task<List<Channel>> GetAllAsync()
+        {
+            return await _dbSet
+                .ToListAsync();
+        }
+
+
         // get all by
         public async Task<List<Channel>> GetAllByCreatorIdAsync(Guid creatorId)
         {

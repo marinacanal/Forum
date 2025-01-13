@@ -13,7 +13,7 @@ namespace Application.Shared
             Data = data;
         }
 
-        public static ApiResponse<T> SuccessResponse(T? data, string message = "Operation successful")
+        public static ApiResponse<T> SuccessResponse(T? data, string message = "Operation successful!")
         {
             return new ApiResponse<T>(true, message, data);
         }

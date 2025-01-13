@@ -9,6 +9,9 @@ namespace Domain.Forum.Interfaces
         Task <Channel> GetByIdAsync(Guid id);
         Task <Channel> GetByNameAsync(string name);
 
+        // get all
+        Task <List<Channel>> GetAllAsync();
+
         // get all by
         Task <List<Channel>> GetAllByCreatorIdAsync(Guid creatorId);
 

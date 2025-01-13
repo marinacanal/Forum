@@ -15,16 +15,11 @@ namespace Application.Services.Forum
             _channelRepository = channelRepository;
         }
 
-        public async Task<ApiResponse<>> GetChannelsAsync(Dto dto)
-        {
-           // to do implementation here
-        }
-
         public async Task<ApiResponse<CreateResponseDto>> CreateChannelAsync(CreateRequestDto dto)
         {
             var existingChannel = _channelRepository.GetByNameAsync(dto.ChannelName);
 
-            if(existingChannel != null)
+            if (existingChannel != null)
             {
                 return ApiResponse<CreateResponseDto>.FailureResponse("Já existe um canal com esse nome!");
             }
@@ -44,17 +39,54 @@ namespace Application.Services.Forum
 
             return ApiResponse<CreateResponseDto>.SuccessResponse(channelResponse);
         }
+        
+        public async Task<ApiResponse<List<GetResponseDto>>> GetAllChannelsAsync(string? channelName)
+        {
+            List<Channel> existingsChannels;
+
+            if (channelName != string.Empty)
+            {
+                existingsChannels = await _channelRepository.GetContainsNameAsync(channelName);
+
+                if (!existingsChannels.Any())
+                    existingsChannels = await _channelRepository.GetContainsDescriptionAsync(channelName);
+            }
+            else
+            {
+                existingsChannels = await _channelRepository.GetAllAsync();
+            }
+
+            if (!existingsChannels.Any())
+                    return ApiResponse<List<GetResponseDto>>.FailureResponse("Nenhum canal encontrado, tente outro nome!");
+                
+            var channelResponses = new List<GetResponseDto>();
+            
+            foreach (var channel in existingsChannels) 
+            {
+                var channelResponse = new GetResponseDto 
+                {
+                    ChannelId = channel.ChannelId,
+                    ChannelName = channel.Name.ToString(),
+                    ChannelDescription = channel.Description.ToString(),
+                    ProfilePicture = channel.ProfilePicture
+                };
+
+                channelResponses.Add(channelResponse);
+            }       
+            
+            return ApiResponse<List<GetResponseDto>>.SuccessResponse(channelResponses);    
+        }
 
         public async Task<ApiResponse<string>> UpdateChannelDescriptionAsync(UpdateDescriptionRequestDto dto)
         {
             var existingChannel = await _channelRepository.GetByIdAsync(dto.ChannelId);
 
-            if(existingChannel == null)
+            if (existingChannel == null)
             {
                 return ApiResponse<string>.FailureResponse("Canal não existe!");
             }
 
-            if(dto.UpdatedBy != existingChannel.CreatorId)
+            if (dto.UpdatedBy != existingChannel.CreatorId)
             {
                 return ApiResponse<string>.FailureResponse("Você não tem permissão para editar esse canal!");
             }
@@ -70,12 +102,12 @@ namespace Application.Services.Forum
         {
             var existingChannel = await _channelRepository.GetByIdAsync(dto.ChannelId);
 
-            if(existingChannel == null)
+            if (existingChannel == null)
             {
                 return ApiResponse<string>.FailureResponse("Canal não existe!");
             }
 
-            if(dto.UpdatedBy != existingChannel.CreatorId)
+            if (dto.UpdatedBy != existingChannel.CreatorId)
             {
                 return ApiResponse<string>.FailureResponse("Você não tem permissão para editar esse canal!");
             }
@@ -90,12 +122,12 @@ namespace Application.Services.Forum
         {
             var existingChannel = await _channelRepository.GetByIdAsync(dto.ChannelId);
 
-            if(existingChannel == null)
+            if (existingChannel == null)
             {
                 return ApiResponse<string>.FailureResponse("Canal não existe!");
             }
 
-            if(dto.DeletedBy != existingChannel.CreatorId)
+            if (dto.DeletedBy != existingChannel.CreatorId)
             {
                 return ApiResponse<string>.FailureResponse("Você não tem permissão para deletar esse canal!");
             }

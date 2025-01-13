@@ -26,14 +26,14 @@ namespace Application.Services.UserManagement
             if (existingUser == null || !existingUser.Password.VerifyPassword(dto.PlainPassword, _passwordHasher))
                return ApiResponse<UserLoginResponseDto>.FailureResponse("Usuário ou senha inválidos!");
             
-            var token = "token teste"; // _jwtTokenGenerator.GenerateToken(existingUser.UserId);
+            var token = _jwtTokenGenerator.GenerateToken(existingUser.UserId);
 
             var loginResponse = new UserLoginResponseDto
                 {
                     Token = token
                 };
 
-            return ApiResponse<UserLoginResponseDto>.SuccessResponse(loginResponse);
+            return ApiResponse<UserLoginResponseDto>.SuccessResponse(loginResponse, "Login successful!");
         }
 
         public async Task<ApiResponse<UserRegisterResponseDto>> RegisterAsync(UserRegisterRequestDto dto)
@@ -58,7 +58,7 @@ namespace Application.Services.UserManagement
                     UserId = newUser.UserId.ToString()
                 };
             
-            return ApiResponse<UserRegisterResponseDto>.SuccessResponse(registerResponse);
+            return ApiResponse<UserRegisterResponseDto>.SuccessResponse(registerResponse, "Registration successful!");
         }
 
         private string GenerateUsernameFromEmail(string email) 

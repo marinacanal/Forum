@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Context
 {
-    public class ForumContext : DbContext
+    public class Context : DbContext
     {
-        public ForumContext(DbContextOptions<ForumContext> options) : base(options) { }
+        public Context(DbContextOptions<Context> options) : base(options) { }
         public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Reaction> Reactions { get; set; }
