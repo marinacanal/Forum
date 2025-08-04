@@ -15,7 +15,7 @@ namespace Application.Services.Forum
             _channelRepository = channelRepository;
         }
 
-        public async Task<ApiResponse<List<GetResponseDto>>> GetAllChannelsAsync(string? channelName)
+        public async Task<ApiResponse<List<GetResponseDto>>> SearchChannelsAsync(string? channelName)
         {
             List<Channel> existingsChannels;
 
