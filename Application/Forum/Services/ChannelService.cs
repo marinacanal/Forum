@@ -15,31 +15,6 @@ namespace Application.Services.Forum
             _channelRepository = channelRepository;
         }
 
-        public async Task<ApiResponse<CreateResponseDto>> CreateChannelAsync(CreateRequestDto dto)
-        {
-            var existingChannel = _channelRepository.GetByNameAsync(dto.ChannelName);
-
-            if (existingChannel != null)
-            {
-                return ApiResponse<CreateResponseDto>.FailureResponse("Já existe um canal com esse nome!");
-            }
-
-            var newChannel = new Channel(
-                dto.CreatorId,
-                new ChannelName(dto.ChannelName),
-                new ChannelDescription(dto.ChannelDescription)
-            );
-
-            await _channelRepository.CreateAsync(newChannel);
-
-            var channelResponse = new CreateResponseDto 
-            {
-                ChannelId = newChannel.ChannelId
-            };
-
-            return ApiResponse<CreateResponseDto>.SuccessResponse(channelResponse);
-        }
-        
         public async Task<ApiResponse<List<GetResponseDto>>> GetAllChannelsAsync(string? channelName)
         {
             List<Channel> existingsChannels;
@@ -57,24 +32,53 @@ namespace Application.Services.Forum
             }
 
             if (!existingsChannels.Any())
-                    return ApiResponse<List<GetResponseDto>>.FailureResponse("Nenhum canal encontrado, tente outro nome!");
-                
-            var channelResponses = new List<GetResponseDto>();
-            
-            foreach (var channel in existingsChannels) 
-            {
-                var channelResponse = new GetResponseDto 
-                {
-                    ChannelId = channel.ChannelId,
-                    ChannelName = channel.Name.ToString(),
-                    ChannelDescription = channel.Description.ToString(),
-                    ProfilePicture = channel.ProfilePicture
-                };
+                return ApiResponse<List<GetResponseDto>>.FailureResponse("Nenhum canal encontrado, tente outro nome!");
 
-                channelResponses.Add(channelResponse);
-            }       
-            
-            return ApiResponse<List<GetResponseDto>>.SuccessResponse(channelResponses);    
+            return ApiResponse<List<GetResponseDto>>.SuccessResponse(GetResponse(existingsChannels));
+        }
+
+        public async Task<ApiResponse<List<GetResponseDto>>> GetAllChannelsByCreatorAsync(Guid creatorId)
+        {
+            List<Channel> existingsChannels;
+
+            if (creatorId != Guid.Empty)
+            {
+                existingsChannels = await _channelRepository.GetAllByCreatorIdAsync(creatorId);
+            }
+            else
+            {
+                return ApiResponse<List<GetResponseDto>>.FailureResponse("Necessário informar id do criador!");
+            }
+
+            if (!existingsChannels.Any())
+                return ApiResponse<List<GetResponseDto>>.FailureResponse("Nenhum canal encontrado!");
+
+            return ApiResponse<List<GetResponseDto>>.SuccessResponse(GetResponse(existingsChannels));
+        }
+
+        public async Task<ApiResponse<CreateResponseDto>> CreateChannelAsync(CreateRequestDto dto)
+        {
+            var existingChannel = _channelRepository.GetByNameAsync(dto.ChannelName);
+
+            if (existingChannel != null)
+            {
+                return ApiResponse<CreateResponseDto>.FailureResponse("Já existe um canal com esse nome!");
+            }
+
+            var newChannel = new Channel(
+                dto.CreatorId,
+                new ChannelName(dto.ChannelName),
+                new ChannelDescription(dto.ChannelDescription)
+            );
+
+            await _channelRepository.CreateAsync(newChannel);
+
+            var channelResponse = new CreateResponseDto
+            {
+                ChannelId = newChannel.ChannelId
+            };
+
+            return ApiResponse<CreateResponseDto>.SuccessResponse(channelResponse);
         }
 
         public async Task<ApiResponse<string>> UpdateChannelDescriptionAsync(UpdateDescriptionRequestDto dto)
@@ -134,6 +138,26 @@ namespace Application.Services.Forum
 
             await _channelRepository.DeleteAsync(existingChannel);
             return ApiResponse<string>.SuccessResponse(null);
+        }
+
+        private List<GetResponseDto> GetResponse(List<Channel> existingsChannels)
+        {
+            var channelResponses = new List<GetResponseDto>();
+
+            foreach (var channel in existingsChannels)
+            {
+                var channelResponse = new GetResponseDto
+                {
+                    ChannelId = channel.ChannelId,
+                    ChannelName = channel.Name.ToString(),
+                    ChannelDescription = channel.Description.ToString(),
+                    ProfilePicture = channel.ProfilePicture
+                };
+
+                channelResponses.Add(channelResponse);
+            }
+
+            return channelResponses;
         }
     }
 }

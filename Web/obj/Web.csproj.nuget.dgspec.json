@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Web/Web.csproj": {}
+    "/home/kamorrer/Documentos/Projetos/Forum/Forum/Web/Web.csproj": {}
   },
   "projects": {
-    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj": {
+    "/home/kamorrer/Documentos/Projetos/Forum/Forum/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj",
+        "projectUniqueName": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj",
-        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
-        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/obj/",
+        "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Application/Application.csproj",
+        "packagesPath": "/home/kamorrer/.nuget/packages/",
+        "outputPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
+          "/home/kamorrer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {
-                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj"
+              "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/Domain.csproj": {
+                "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/Domain.csproj"
               },
-              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj"
+              "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -39,7 +39,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -58,7 +64,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -66,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {
+    "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj",
+        "projectUniqueName": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj",
-        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
-        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/obj/",
+        "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/Domain.csproj",
+        "packagesPath": "/home/kamorrer/.nuget/packages/",
+        "outputPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
+          "/home/kamorrer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -98,7 +108,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -117,7 +133,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -125,21 +145,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj": {
+    "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
-        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/obj/",
+        "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/home/kamorrer/.nuget/packages/",
+        "outputPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
+          "/home/kamorrer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -151,8 +171,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj": {
-                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Domain/Domain.csproj"
+              "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/Domain.csproj": {
+                "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Domain/Domain.csproj"
               }
             }
           }
@@ -161,7 +181,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -200,7 +226,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -208,21 +238,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Web/Web.csproj": {
+    "/home/kamorrer/Documentos/Projetos/Forum/Forum/Web/Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Web/Web.csproj",
+        "projectUniqueName": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Web/Web.csproj",
         "projectName": "Web",
-        "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Web/Web.csproj",
-        "packagesPath": "/home/kamore-archlinux/.nuget/packages/",
-        "outputPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Web/obj/",
+        "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Web/Web.csproj",
+        "packagesPath": "/home/kamorrer/.nuget/packages/",
+        "outputPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Web/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kamore-archlinux/.nuget/NuGet/NuGet.Config"
+          "/home/kamorrer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -234,11 +264,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj": {
-                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Application/Application.csproj"
+              "/home/kamorrer/Documentos/Projetos/Forum/Forum/Application/Application.csproj": {
+                "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Application/Application.csproj"
               },
-              "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/home/kamore-archlinux/Documentos/Dev/C#/Forum/Infrastructure/Infrastructure.csproj"
+              "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/home/kamorrer/Documentos/Projetos/Forum/Forum/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -247,7 +277,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -284,7 +320,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -295,7 +339,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
