@@ -52,12 +52,11 @@ namespace Web.Forum.Controllers
         }
 
 
-        [HttpPatch]
-        public async Task<IActionResult> UpdateDescription()
-        {
-            // to do
-        }
-        
+        // [HttpPatch]
+        // public async Task<IActionResult> UpdateDescription()
+        // {
+        //     // to do
+        // }   
         
     }
 }

@@ -31,9 +31,10 @@ namespace Domain.Forum.Entities
 
             Members = new List<ChannelMembers>();
             Posts = new List<Post>();
-        } 
+        }
 
         // updates
+        public void UpdateName(ChannelName name) => Name = name;
         public void UpdateDescription(ChannelDescription description) => Description = description;
         public void UpdateProfilePicture(string profilePicture)
         {

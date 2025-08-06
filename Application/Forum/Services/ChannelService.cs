@@ -15,7 +15,7 @@ namespace Application.Services.Forum
             _channelRepository = channelRepository;
         }
 
-        public async Task<ApiResponse<List<GetResponseDto>>> SearchChannelsAsync(string? channelName)
+        public async Task<ApiResponse<List<GetResponseDto>>> SearchAsync(string? channelName)
         {
             List<Channel> existingsChannels;
 
@@ -37,7 +37,7 @@ namespace Application.Services.Forum
             return ApiResponse<List<GetResponseDto>>.SuccessResponse(GetResponse(existingsChannels));
         }
 
-        public async Task<ApiResponse<List<GetResponseDto>>> GetAllChannelsByCreatorAsync(Guid creatorId)
+        public async Task<ApiResponse<List<GetResponseDto>>> GetAllByCreatorAsync(Guid creatorId)
         {
             List<Channel> existingsChannels;
 
@@ -56,7 +56,7 @@ namespace Application.Services.Forum
             return ApiResponse<List<GetResponseDto>>.SuccessResponse(GetResponse(existingsChannels));
         }
 
-        public async Task<ApiResponse<CreateResponseDto>> CreateChannelAsync(CreateRequestDto dto)
+        public async Task<ApiResponse<CreateResponseDto>> CreateAsync(CreateRequestDto dto)
         {
             var existingChannel = _channelRepository.GetByNameAsync(dto.ChannelName);
 
@@ -81,7 +81,7 @@ namespace Application.Services.Forum
             return ApiResponse<CreateResponseDto>.SuccessResponse(channelResponse);
         }
 
-        public async Task<ApiResponse<string>> UpdateChannelDescriptionAsync(UpdateDescriptionRequestDto dto)
+        public async Task<ApiResponse<string>> UpdateAsync(UpdateRequestDto dto)
         {
             var existingChannel = await _channelRepository.GetByIdAsync(dto.ChannelId);
 
@@ -95,14 +95,22 @@ namespace Application.Services.Forum
                 return ApiResponse<string>.FailureResponse("Você não tem permissão para editar esse canal!");
             }
 
-            var channelDescription = new ChannelDescription(dto.ChannelDescription);
-            existingChannel.UpdateDescription(channelDescription);
+            if (!string.IsNullOrWhiteSpace(dto.ChannelDescription))
+            {
+                existingChannel.UpdateDescription(new ChannelDescription(dto.ChannelDescription));
+            }
+
+            if (!string.IsNullOrWhiteSpace(dto.ChannelName))
+            {
+                existingChannel.UpdateName(new ChannelName(dto.ChannelName));
+            }
+  
             await _channelRepository.UpdateAsync(existingChannel);
 
             return ApiResponse<string>.SuccessResponse(null);
         }
 
-        public async Task<ApiResponse<string>> UpdateChannelProfilePictureAsync(UpdateProfilePictureRequestDto dto)
+        public async Task<ApiResponse<string>> UpdateProfilePictureAsync(UpdateProfilePictureRequestDto dto)
         {
             var existingChannel = await _channelRepository.GetByIdAsync(dto.ChannelId);
 
@@ -122,7 +130,7 @@ namespace Application.Services.Forum
             return ApiResponse<string>.SuccessResponse(null);
         }
 
-        public async Task<ApiResponse<string>> DeleteChannelAsync(DeleteRequestDto dto)
+        public async Task<ApiResponse<string>> DeleteAsync(DeleteRequestDto dto)
         {
             var existingChannel = await _channelRepository.GetByIdAsync(dto.ChannelId);
 
@@ -140,6 +148,7 @@ namespace Application.Services.Forum
             return ApiResponse<string>.SuccessResponse(null);
         }
 
+        #region metodos privados
         private List<GetResponseDto> GetResponse(List<Channel> existingsChannels)
         {
             var channelResponses = new List<GetResponseDto>();
@@ -159,5 +168,6 @@ namespace Application.Services.Forum
 
             return channelResponses;
         }
+        #endregion
     }
 }
