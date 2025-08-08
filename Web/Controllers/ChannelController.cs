@@ -18,7 +18,7 @@ namespace Web.Forum.Controllers
         [HttpGet]
         public async Task<IActionResult> Search([FromBody] string channelName)
         {
-            var response = await _channelService.SearchChannelsAsync(channelName);
+            var response = await _channelService.SearchAsync(channelName);
 
             if (!response.Success)
                 return Conflict(response);
@@ -27,9 +27,9 @@ namespace Web.Forum.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetByCreator([FromBody] Guid creatorId)
+        public async Task<IActionResult> GetAllByCreator([FromBody] Guid creatorId)
         {
-            var response = await _channelService.GetAllChannelsByCreatorAsync(creatorId);
+            var response = await _channelService.GetAllByCreatorAsync(creatorId);
 
             if (!response.Success)
                 return Conflict(response);
@@ -43,7 +43,7 @@ namespace Web.Forum.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var response = await _channelService.CreateChannelAsync(dto);
+            var response = await _channelService.CreateAsync(dto);
 
             if (!response.Success)
                 return Conflict(response);
@@ -51,12 +51,46 @@ namespace Web.Forum.Controllers
             return Ok(response);
         }
 
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateRequestDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-        // [HttpPatch]
-        // public async Task<IActionResult> UpdateDescription()
-        // {
-        //     // to do
-        // }   
+            var response = await _channelService.UpdateAsync(dto);
+
+            if (!response.Success)
+                return Conflict(response);
+
+            return Ok(response);
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfilePictureRequestDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var response = await _channelService.UpdateProfilePictureAsync(dto);
+
+            if (!response.Success)
+                return Conflict(response);
+
+            return Ok(response);
+        }   
         
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] DeleteRequestDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var response = await _channelService.DeleteAsync(dto);
+
+            if (!response.Success)
+                return Conflict(response);
+
+            return Ok(response);
+        }       
     }
 }
